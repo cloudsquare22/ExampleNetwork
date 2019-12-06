@@ -24,13 +24,8 @@ class NetworkServer {
 //                    let receiveData = [UInt8](data!)
 //                    print(receiveData)
 //                })
-                newConnection.receive(minimumIncompleteLength: 1, maximumLength: 5, completion: { (data, context, flag, error) in
-                    print("receiveMessage")
-                    let receiveData = [UInt8](data!)
-                    print(receiveData)
-                    print(flag)
-                })
                 newConnection.start(queue: myQueue)
+                self.receive(nWConnection: newConnection)
             }
             nWListener.start(queue: myQueue)
             print("start")
@@ -39,4 +34,22 @@ class NetworkServer {
             print(error)
         }
     }
+    
+    func receive(nWConnection:NWConnection) {
+        nWConnection.receive(minimumIncompleteLength: 1, maximumLength: 5, completion: { (data, context, flag, error) in
+            print("receiveMessage")
+            if let data = data {
+                let receiveData = [UInt8](data)
+                print(receiveData)
+                print(flag)
+                if(flag == false) {
+                    self.receive(nWConnection: nWConnection)
+                }
+            }
+            else {
+                print("receiveMessage data nil")
+            }
+        })
+    }
+    
 }
