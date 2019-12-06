@@ -19,10 +19,16 @@ class NetworkServer {
             let nWListener = try NWListener(using: .tcp, on: 7777)
             nWListener.newConnectionHandler = { (newConnection) in
                 print("New Connection!!")
-                newConnection.receiveMessage(completion: { (data, context, flag, error) in
+//                newConnection.receiveMessage(completion: { (data, context, flag, error) in
+//                    print("receiveMessage")
+//                    let receiveData = [UInt8](data!)
+//                    print(receiveData)
+//                })
+                newConnection.receive(minimumIncompleteLength: 1, maximumLength: 5, completion: { (data, context, flag, error) in
                     print("receiveMessage")
                     let receiveData = [UInt8](data!)
                     print(receiveData)
+                    print(flag)
                 })
                 newConnection.start(queue: myQueue)
             }
