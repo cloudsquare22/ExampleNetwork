@@ -16,7 +16,7 @@ class NetworkServer {
         let myQueue = DispatchQueue(label: "ExampleNetwork")
 
         do {
-            let nWListener = try NWListener(using: .tcp, on: 7777)
+            let nWListener = try NWListener(using: .udp, on: 7777)
             nWListener.newConnectionHandler = { (newConnection) in
                 print("New Connection!!")
 //                newConnection.receiveMessage(completion: { (data, context, flag, error) in
