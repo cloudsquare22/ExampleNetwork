@@ -24,18 +24,33 @@ class SendAndReceive {
     func startConnection() {
         let myQueue = DispatchQueue(label: "ExampleNetwork")
         let connection = NWConnection(host: host, port: port, using: nWParameters)
+        connection.pathUpdateHandler = { (nWPath) in
+            print("pathUpdateHandler:\(nWPath)")
+        }
+        connection.viabilityUpdateHandler = { (viability) in
+            print("viabilityUpdateHandler:\(viability)")
+        }
+        connection.betterPathUpdateHandler = {(better) in
+            print("betterPathUpdateHandler:\(better)")
+        }
         connection.stateUpdateHandler = { (newState) in
             switch(newState) {
-            case .ready:
-                print("ready")
-                self.sendMessage(connection)
+            case .setup:
+                print("setup")
             case .waiting(let error):
                 print("waiting")
                 print(error)
+            case .preparing:
+                print("preparing")
+            case .ready:
+                print("ready")
+                self.sendMessage(connection)
             case .failed(let error):
                 print("failed")
                 print(error)
-            default:
+            case .cancelled:
+                print("cancelled")
+            @unknown default:
                 print("defaults")
                 break
             }
