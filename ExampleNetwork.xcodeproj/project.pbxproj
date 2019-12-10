@@ -10,6 +10,8 @@
 		8D0F4488231F155700749430 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4487231F155700749430 /* main.swift */; };
 		8D85F57E23992BBE0004A0B2 /* NetworkServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D85F57D23992BBE0004A0B2 /* NetworkServer.swift */; };
 		8DDA4E3C2397E6F900CD42DD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDA4E3B2397E6F900CD42DD /* NetworkClient.swift */; };
+		8DDFC125239C6E4800B278D6 /* SendAndReceive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDFC124239C6E4800B278D6 /* SendAndReceive.swift */; };
+		8DFCB581239E867F00606A37 /* ExampleNWBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB580239E867F00606A37 /* ExampleNWBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		8D0F4487231F155700749430 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8D85F57D23992BBE0004A0B2 /* NetworkServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServer.swift; sourceTree = "<group>"; };
 		8DDA4E3B2397E6F900CD42DD /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		8DDFC124239C6E4800B278D6 /* SendAndReceive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAndReceive.swift; sourceTree = "<group>"; };
+		8DFCB580239E867F00606A37 /* ExampleNWBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNWBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				8D0F4487231F155700749430 /* main.swift */,
 				8DDA4E3B2397E6F900CD42DD /* NetworkClient.swift */,
 				8D85F57D23992BBE0004A0B2 /* NetworkServer.swift */,
+				8DDFC124239C6E4800B278D6 /* SendAndReceive.swift */,
+				8DFCB580239E867F00606A37 /* ExampleNWBrowser.swift */,
 			);
 			path = ExampleNetwork;
 			sourceTree = "<group>";
@@ -129,6 +135,8 @@
 				8D0F4488231F155700749430 /* main.swift in Sources */,
 				8D85F57E23992BBE0004A0B2 /* NetworkServer.swift in Sources */,
 				8DDA4E3C2397E6F900CD42DD /* NetworkClient.swift in Sources */,
+				8DFCB581239E867F00606A37 /* ExampleNWBrowser.swift in Sources */,
+				8DDFC125239C6E4800B278D6 /* SendAndReceive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
